@@ -1,0 +1,144 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Infrastructure.Data\\Inventario.Ferramentas.Infrastructure.Data.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Domain\\Inventario.Ferramentas.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Domain\\Inventario.Ferramentas.Domain.csproj",
+        "projectName": "Inventario.Ferramentas.Domain",
+        "projectPath": "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Domain\\Inventario.Ferramentas.Domain.csproj",
+        "packagesPath": "C:\\Users\\raulf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\raulf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Infrastructure.Data\\Inventario.Ferramentas.Infrastructure.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Infrastructure.Data\\Inventario.Ferramentas.Infrastructure.Data.csproj",
+        "projectName": "Inventario.Ferramentas.Infrastructure.Data",
+        "projectPath": "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Infrastructure.Data\\Inventario.Ferramentas.Infrastructure.Data.csproj",
+        "packagesPath": "C:\\Users\\raulf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Infrastructure.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\raulf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Domain\\Inventario.Ferramentas.Domain.csproj": {
+                "projectPath": "C:\\Users\\raulf\\Documents\\C# Projects\\Inventario.Ferramentas\\Inventario.Ferramentas.Domain\\Inventario.Ferramentas.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
