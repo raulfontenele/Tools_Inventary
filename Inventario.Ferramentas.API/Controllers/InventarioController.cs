@@ -31,22 +31,36 @@ namespace Inventario.Ferramentas.API.Controllers
         [HttpPatch]
         public IActionResult UpdateToolOutput(UpdateSaidaInventarioModel model)
         {
-            var ferramenta = _context.InventarioFerramentas.SingleOrDefault(inv => inv.IdFerramenta == model.IdFerramenta);
-            if (ferramenta == null) return NotFound();
+            try
+            {
+                var ferramenta = _context.InventarioFerramentas.SingleOrDefault(inv => inv.IdFerramenta == model.IdFerramenta);
+                if (ferramenta == null) return NotFound();
 
-            ferramenta.Status = Status.Emprestado;
-            ferramenta.MatriculaUsuario = model.Matricula;
-            ferramenta.DataEmprestimo = DateTime.Now;
+                if (ferramenta.Status == Status.Emprestado) return BadRequest("Ferramenta não disponível");
 
-            _context.SaveChanges();
+                ferramenta.Status = Status.Emprestado;
+                ferramenta.MatriculaUsuario = model.Matricula;
+                ferramenta.DataEmprestimo = DateTime.Now;
 
-            return Ok("Deu bom");
+                if (ferramenta.DataDevolucao.HasValue) ferramenta.DataDevolucao = null;
+
+                _context.SaveChanges();
+
+                return Ok("Deu bom");
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
+            
         }
         [HttpPatch("{idFerramenta}")]
         public IActionResult UpdateToolReturn(int idFerramenta)
         {
             var ferramenta = _context.InventarioFerramentas.SingleOrDefault(inv => inv.IdFerramenta == idFerramenta);
             if (ferramenta == null) return NotFound();
+
+            if (ferramenta.Status == Status.Estoque) return BadRequest("Ferramenta não está emprestada");
 
             ferramenta.Status = Status.Estoque;
             ferramenta.DataDevolucao = DateTime.Now;
