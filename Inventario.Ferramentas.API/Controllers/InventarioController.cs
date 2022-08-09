@@ -92,5 +92,12 @@ namespace Inventario.Ferramentas.API.Controllers
                 return View(ex.Message);
             }
         }
+        [Route("api/[controller]/Emprestimo")]
+        [HttpGet]
+        public IActionResult GetAllEmprestadas()
+        {
+            var inventarioFiltro = _context.InventarioFerramentas.Where(ferr => ferr.Status == Status.Emprestado);
+            return Ok(inventarioFiltro);
+        }
     }
 }
