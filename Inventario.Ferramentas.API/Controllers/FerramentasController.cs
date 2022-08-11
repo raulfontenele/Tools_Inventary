@@ -21,7 +21,7 @@ namespace Inventario.Ferramentas.API.Controllers
             return Ok(ferramentas);
         }
         [HttpPost]
-        public IActionResult Put(AddFerramentaModel model)
+        public IActionResult Add(AddFerramentaModel model)
         {
             try
             {
@@ -36,6 +36,27 @@ namespace Inventario.Ferramentas.API.Controllers
                 return Ok("deu bom");
             }
             catch(Exception ex)
+            {
+                return View(ex.Message);
+            }
+        }
+        [HttpDelete]
+        public IActionResult Delete(int idFerramenta)
+        {
+            try
+            {
+                //Validar se a ferramenta encontra-se cadastrada na base de dados
+                var ferramenta = _context.Ferramentas.SingleOrDefault(ferr => ferr.Id == idFerramenta);
+
+                if (ferramenta == null) return NotFound();
+
+                _context.Ferramentas.Remove(ferramenta);
+
+                _context.SaveChanges();
+
+                return Ok("deu bom");
+            }
+            catch (Exception ex)
             {
                 return View(ex.Message);
             }

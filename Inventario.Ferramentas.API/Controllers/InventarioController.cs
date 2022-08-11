@@ -92,6 +92,27 @@ namespace Inventario.Ferramentas.API.Controllers
                 return View(ex.Message);
             }
         }
+        [HttpDelete]
+        public IActionResult Delete(int idFerramenta)
+        {
+            try
+            {
+                //Validar se a ferramenta encontra-se cadastrada na base de dados
+                var ferramenta = _context.InventarioFerramentas.SingleOrDefault(ferr => ferr.IdFerramenta == idFerramenta);
+
+                if(ferramenta == null) return NotFound();
+
+                _context.InventarioFerramentas.Remove(ferramenta);
+
+                _context.SaveChanges();
+
+                return Ok("deu bom");
+            }
+            catch (Exception ex)
+            {
+                return View(ex.Message);
+            }
+        }
         [Route("api/[controller]/Emprestimo")]
         [HttpGet]
         public IActionResult GetAllEmprestadas()
