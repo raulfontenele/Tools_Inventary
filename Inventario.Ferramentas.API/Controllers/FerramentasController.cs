@@ -20,20 +20,27 @@ namespace Inventario.Ferramentas.API.Controllers
             var ferramentas = _context.Ferramentas;
             return Ok(ferramentas);
         }
+        [HttpGet("{id:int}")]
+        public IActionResult GetById(int id)
+        {
+            
+            var ferramentas = _context.Ferramentas.SingleOrDefault(ferr => ferr.Id == id);
+            if(ferramentas == null) return NotFound();
+            return Ok(ferramentas);
+        }
         [HttpPost]
         public IActionResult Add(AddFerramentaModel model)
         {
             try
             {
                 bool findFlag = _context.Ferramentas.Any(ferr => ferr.Id == model.Id);
-                if (findFlag) return NoContent();
+                if (findFlag) return BadRequest("Ferramenta com id já alocado");
 
-                _context.Ferramentas.Add(
-                        new Ferramenta(model.Id, model.Nome, model.Descricao)
-                        );
+                Ferramenta _ferramenta = new(model.Id, model.Nome, model.Descricao);
+                _context.Ferramentas.Add(_ferramenta);
                 _context.SaveChanges();
 
-                return Ok("deu bom");
+                return CreatedAtAction("GetById", new { id = model.Id }, _ferramenta);
             }
             catch(Exception ex)
             {
